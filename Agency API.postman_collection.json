@@ -1,0 +1,336 @@
+{
+	"info": {
+		"_postman_id": "329863f6-0467-4e2f-8dcd-98cdadaacf5f",
+		"name": "Agency API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34043170"
+	},
+	"item": [
+		{
+			"name": "Hotels",
+			"item": [
+				{
+					"name": "Create Hotel",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\": \"Hotel Example\", \"city\": \"City Name\", \"rooms\": [{\"type\": \"Single\", \"price\": 100, \"availability\": \"2024-06-01 to 2024-06-05\"}, {\"type\": \"Double\", \"price\": 150, \"availability\": \"2024-06-01 to 2024-06-05\"}]}"
+						},
+						"url": {
+							"raw": "localhost:8080/agency/hotels/new",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"agency",
+								"hotels",
+								"new"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Hotels",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/agency/hotels",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"agency",
+								"hotels"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Hotel by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/agency/hotels/{hotelId}",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"agency",
+								"hotels",
+								"{hotelId}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Hotel",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\": \"Updated Hotel Name\", \"city\": \"Updated City Name\"}"
+						},
+						"url": {
+							"raw": "localhost:8080/agency/hotels/edit/{hotelId}",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"agency",
+								"hotels",
+								"edit",
+								"{hotelId}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Hotel",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/agency/hotels/delete/{hotelId}",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"agency",
+								"hotels",
+								"delete",
+								"{hotelId}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Flights",
+			"item": [
+				{
+					"name": "Create Flight",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"origin\": \"Origin City\", \"destination\": \"Destination City\", \"date\": \"2024-07-01\", \"available_seats\": 150}"
+						},
+						"url": {
+							"raw": "localhost:8080/agency/flights/new",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"agency",
+								"flights",
+								"new"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Flights",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/agency/flights",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"agency",
+								"flights"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Flight by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/agency/flights/{flightId}",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"agency",
+								"flights",
+								"{flightId}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Flight",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"origin\": \"Updated Origin City\", \"destination\": \"Updated Destination City\", \"date\": \"2024-08-01\", \"available_seats\": 200}"
+						},
+						"url": {
+							"raw": "localhost:8080/agency/flights/edit/{flightId}",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"agency",
+								"flights",
+								"edit",
+								"{flightId}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Flight",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/agency/flights/delete/{flightId}",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"agency",
+								"flights",
+								"delete",
+								"{flightId}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Bookings",
+			"item": [
+				{
+					"name": "Create Hotel Booking",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"room_id\": \"Room ID\", \"check_in\": \"2024-06-01\", \"check_out\": \"2024-06-05\", \"client_id\": \"Client ID\"}"
+						},
+						"url": {
+							"raw": "localhost:8080/agency/hotels/{hotelId}/rooms-booking/new",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"agency",
+								"hotels",
+								"{hotelId}",
+								"rooms-booking",
+								"new"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Flight Booking",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"seat_type\": \"Business\", \"client_ids\": [\"Client ID 1\", \"Client ID 2\"]}"
+						},
+						"url": {
+							"raw": "localhost:8080/agency/flights/{flightId}/flight-booking/new",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"agency",
+								"flights",
+								"{flightId}",
+								"flight-booking",
+								"new"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Hotel Bookings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/agency/hotels/rooms-booking",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"agency",
+								"hotels",
+								"rooms-booking"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Flight Bookings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/agency/flights/{flightId}/flight-booking",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"agency",
+								"flights",
+								"{flightId}",
+								"flight-booking"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
